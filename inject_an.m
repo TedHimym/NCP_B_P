@@ -1,11 +1,11 @@
 clc; clear;
-%%
+%% Model_B
 load('inject.mat', 't_c');
 load('inject.mat', 'iosT');
 load('steady_time.mat', 'steady_time')
 load theta_mU.mat
 load const_v.mat
-%%
+%% Model_S
 % load('Ra1E6_5E8.mat')
 % load('theta_mU_S.mat')
 % load('steady_time_S.mat', 'steady_time')

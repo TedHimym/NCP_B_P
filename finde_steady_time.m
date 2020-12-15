@@ -1,12 +1,12 @@
 clear; clc;
 
 global t_c theta
-%%
+%% Model_B
 % load('theta_mU.mat', 'theta')
 % load('inject.mat'  ,   't_c')
-%%
-load('theta_mU_S.mat', 'theta')
-load('Ra1E6_5E8.mat')
+%% Model_S
+% load('theta_mU_S.mat', 'theta')
+% load('Ra1E6_5E8.mat')
 %%
 
 t_c = cell2mat(t_c);
@@ -28,10 +28,10 @@ for index = 1: size(t_c, 1)
 end
 
 plot(t_c', theta')
-%%
+%% Model_B
 % save('steady_time.mat', 'steady_time')
-%%
-save('steady_time_S.mat', 'steady_time')
+%% Model_S
+% save('steady_time_S.mat', 'steady_time')
 %%
 
 function nf = nigtave_f(t, index)

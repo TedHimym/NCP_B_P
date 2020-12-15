@@ -1,5 +1,5 @@
 clear; clc; close all;
-%%
+%% Model_B
 % load Ra1E7_1E8_5E8
 % load Ra1E6
 % 
@@ -8,8 +8,8 @@ clear; clc; close all;
 % T_r = [T_r_Ra1E6; T_r_Ra1E7_Ra1E8_Ra5E8];
 % U_r = [U_r_Ra1E6; U_r_Ra1E7_Ra1E8_Ra5E8];
 % T_n = 300;
-%%
-load('Ra1E6_5E8.mat')
+%% Model_S
+% load('Ra1E6_5E8.mat')
 
 %%
 
@@ -31,10 +31,10 @@ for ind = 1: length(t_c)
     figure(1); plot(t_c{ind}, theta(ind,:))
     figure(2); plot(t_c{ind},    mU(ind,:))
 end
-%%
+%% Model_B
 % save('theta_mU', 'theta', 'mU');
-%%
-save('theta_mU_S', 'theta', 'mU');
+%% Model_S
+% save('theta_mU_S', 'theta', 'mU');
 %%
 function delv = del_T(R, T)
 T = T(R < R(1)+0.5);
