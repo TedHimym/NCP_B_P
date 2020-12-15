@@ -1,6 +1,13 @@
 clear; clc;
 
 VF = {
+    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.010/data/', 'R0p01500-');
+    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.020/data/', 'R0p01500-');
+    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.040/data/', 'R0p01500-');
+    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.080/data/', 'R0p01500-');
+    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.250/data/', 'R0p01500-');
+    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.400/data/', 'R0p01500-');
+    
     NProData('./Ra1E7Pr10/R0.010/data/', 'R0p10000-');
     NProData('./Ra1E7Pr10/R0.020/data/', 'R0p10000-');
     NProData('./Ra1E7Pr10/R0.040/data/', 'R0p10000-');
@@ -21,13 +28,6 @@ VF = {
     NProData('./Ra5E8Pr10/R0.080/data/', 'R0p01000-');
     NProData('./Ra5E8Pr10/R0.250/data/', 'R0p01000-');
     NProData('./Ra5E8Pr10/R0.400/data/', 'R0p01000-');
-    
-    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.010/data/', 'R0p01500-');
-    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.020/data/', 'R0p01500-');
-    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.040/data/', 'R0p01500-');
-    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.080/data/', 'R0p01500-');
-    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.250/data/', 'R0p01500-');
-    NProData('C:/Users/mfpcz/Documents/ProData/NC_BIGMD/Ra1E6Pr10/R0.400/data/', 'R0p01500-');
     };
 
 T_n = 300;

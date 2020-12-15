@@ -1,13 +1,15 @@
 clear; clc; close all;
-load Ra1E7_1E8_5E8
-load Ra1E6
-
-r_c = [r_c_Ra1E6; r_c_Ra1E7_Ra1E8_Ra5E8];
-t_c = [t_c_Ra1E6; t_c_Ra1E7_Ra1E8_Ra5E8];
-T_r = [T_r_Ra1E6; T_r_Ra1E7_Ra1E8_Ra5E8];
-U_r = [U_r_Ra1E6; U_r_Ra1E7_Ra1E8_Ra5E8];
-
-T_n = 300;
+%%
+% load Ra1E7_1E8_5E8
+% load Ra1E6
+% 
+% r_c = [r_c_Ra1E6; r_c_Ra1E7_Ra1E8_Ra5E8];
+% t_c = [t_c_Ra1E6; t_c_Ra1E7_Ra1E8_Ra5E8];
+% T_r = [T_r_Ra1E6; T_r_Ra1E7_Ra1E8_Ra5E8];
+% U_r = [U_r_Ra1E6; U_r_Ra1E7_Ra1E8_Ra5E8];
+% T_n = 300;
+%%
+load('Ra1E6_5E8.mat')
 
 %%
 
@@ -29,10 +31,11 @@ for ind = 1: length(t_c)
     figure(1); plot(t_c{ind}, theta(ind,:))
     figure(2); plot(t_c{ind},    mU(ind,:))
 end
-
-save('theta_mU', 'theta', 'mU');
 %%
-
+% save('theta_mU', 'theta', 'mU');
+%%
+save('theta_mU_S', 'theta', 'mU');
+%%
 function delv = del_T(R, T)
 T = T(R < R(1)+0.5);
 R = R(R < R(1)+0.5);
