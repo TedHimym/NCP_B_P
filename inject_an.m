@@ -1,4 +1,35 @@
 clc; clear;
+
+case_name = [...
+    "Ra1E6Pr10/R0.010";
+    "Ra1E6Pr10/R0.020";
+    "Ra1E6Pr10/R0.040";
+    "Ra1E6Pr10/R0.080";
+    "Ra1E6Pr10/R0.250";
+    "Ra1E6Pr10/R0.400";
+    
+    "Ra1E7Pr10/R0.010";
+    "Ra1E7Pr10/R0.020";
+    "Ra1E7Pr10/R0.040";
+    "Ra1E7Pr10/R0.080";
+    "Ra1E7Pr10/R0.250";
+    "Ra1E7Pr10/R0.400";
+    
+    "Ra1E8Pr10/R0.010";
+    "Ra1E8Pr10/R0.020";
+    "Ra1E8Pr10/R0.040";
+    "Ra1E8Pr10/R0.080";
+    "Ra1E8Pr10/R0.250";
+    "Ra1E8Pr10/R0.400";
+    
+    "Ra5E8Pr10/R0.010";
+    "Ra5E8Pr10/R0.020";
+    "Ra5E8Pr10/R0.040";
+    "Ra5E8Pr10/R0.080";
+    "Ra5E8Pr10/R0.250";
+    "Ra5E8Pr10/R0.400";
+    ];
+
 %% Model_B
 load('inject.mat', 't_c');
 load('inject.mat', 'iosT');
@@ -30,13 +61,20 @@ end
 hold on
 U = mU(:,end);
 for indexd = 1:length(t_c)
+    clf;
     time = t_c{indexd};
-    eL = L(indexd, :);
-    plot(time/steady_time(indexd), eL, '-.')
-    Q = (U(indexd).*delta_ios(indexd).*(R(indexd)+delta_ios(indexd).*0.15));
-    uin_d_1 = (R(indexd)+eL).*(eL.^3)./(Q.*(g(indexd)*0.0016*7));
+    eL = smooth(L(indexd, :));
+    u = gradient(eL, time);
+%     plot(time, eL, '-o');
+    hold on
+    plot(time, u, '-');
+    plot([steady_time(indexd) steady_time(indexd)], [0 max(u)])
+    legend(case_name(indexd))
+%     plot(time/steady_time(indexd), eL, '-.')
+%     Q = (U(indexd).*delta_ios(indexd).*(R(indexd)+delta_ios(indexd).*0.15));
+%     uin_d_1 = (R(indexd)+eL).*(eL.^3)./(Q.*(g(indexd)*0.0016*7));
 %     plot(time, power(uin_d_1, 1/3), '.')
 %     uin_d_1 = (R(indexd)+eL).*(eL.^3)./(mU(indexd).*theta(indexd).*(g(indexd)*0.0016*7).*(R(indexd)+theta(indexd).*0.15));
 %     plot(time./steady_time(indexd), power(uin_d_1, 1/3)./steady_time(indexd), '.')
-%     pause
+    pause
 end
