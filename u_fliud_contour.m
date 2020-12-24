@@ -46,7 +46,7 @@ VF = {
     NProData('D:/ProjectData/NCPROJECT_big_modle/Ra5E8Pr10/R0.400/data/', 'R0p01000-');
     };
 
-rv = cell(length(t_c));
+rv = cell(length(t_c), 1);
 
 for indexO = 1: length(t_c)
     eF_rv = zeros(length(t_c{indexO}), 1);

@@ -1,4 +1,4 @@
-function L = length_of_inject_bottom(X, layer, R)
+function P = length_of_inject_bottom(X, layer, R)
 
 ind = 1; LI = 1;
 
@@ -9,11 +9,18 @@ end
 
 xR = X(2, ind+1:ind+X(2,ind));
 z  = X(1, ind+1:ind+X(2,ind));
+
+[z, I] = sort(z);
+xR = xR(I);
+Ind = z < 0.1;
+
 if (min(z) > 0.005)
     L = 4;
 else
-    L = xR(z == min(z)) - R;
+    L = xR(z == min(z));
+%     L = interp1(z(Ind), xR(Ind), 0.05, 'linear');
 end
+P = [L min(z)];
 
 
 % clf
